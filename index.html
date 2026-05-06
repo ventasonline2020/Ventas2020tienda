@@ -13,6 +13,7 @@
             color de fondo: #000000;
         }
 
+        /* Fondo cómodo de ondas blanco y morado */
         .sofisticado-fondo {
             imagen de fondo: 
                 gradiente-lineal(135 grados, rgba(147, 51, 234, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%),
@@ -22,243 +23,186 @@
             adjunto de fondo: fijo;
         }
 
-        .category-tab {
-            transición: todos 0,3 s de facilidad;
-            color: #9ca3af; /* Gris-400 */
+        .category-tab:hover {
+            color: blanco;
+            color de fondo: #9333ea;
         }
-        .category-tab:hover { 
-            color: blanco; 
-            color de fondo: #9333ea; /* Púrpura-600 */
-        }
-        .category-tab.active { 
-            color: blanco; 
-            color de fondo: #9333ea; /* Púrpura-600 */
+        .category-tab.active {
+            color: blanco;
+            color de fondo: #9333ea;
         }
         
-        .no-scrollbar::-webkit- scrollbar { display: none; }
-        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-
-        /* Estilos para la animación de entrada de los productos */
-        .tarjeta-producto {
-            opacidad: 0;
-            transformar: translateY(20px);
-            animación: fadeIn 0.5s adelante ease-out;
+        .no-scrollbar::-webkit- scrollbar {
+            mostrar: ninguno;
         }
-
-        @keyframes fadeIn {
-            a {
-                opacidad: 1;
-                transformar: translateY(0);
-            }
+        .no-scrollbar {
+            -ms-overflow-style: ninguno;
+            ancho de la barra de desplazamiento: ninguno;
         }
     </style>
 </head>
-<body class="text-blanco-cómodo-fondo">
+<body class="text-white mature-bg">
 
     <header class="border-b border-gray-800 bg-black sticky top-0 z-50 py-8">
         <div class="max-w-7xl mx-auto px-4 flex flex-col items-center text-center">
+            
             <div class="mb-4">
-<a href=" https:// ventasonline2020.github.io/ Ventas2020tienda/ ">               
-                    <img src=" https://i.ibb.co/ pryv43p2/1000999313-copia.png " alt="Logo Ventas 2020" class="h-32 md:h-40 object-contain">
-                </a>
+                <img src=" https://i.ibb.co/ VpmWMv8V/1000999313.png " alt="Logo Ventas 2020" class="h-32 md:h-40 object-contain">
             </div>
+            
             <h1 class="text-3xl md:text-5xl font-black text-white uppercase tracking-[0.2em] mb-2">VENTAS 2020 TIENDA</h1>
+            
             <p class="text-sm md:text-lg text-gray-400 font-medium tracking-wide">Región Metropolitana de Santiago, Chile.</p>
         </div>
     </header>
 
     <main class="max-w-7xl mx-auto px-4 py-8">
-        <div class="mb-10 flex justify-center border-b border-gray-800 bg-black/90 backdrop-blur-md sticky top-[230px] md:top-[280px] z-40 rounded-full">
+        <div class="mb-10 flex justify-center border-b border-gray-800 bg-black/90 backdrop-blur-md sticky top-[220px] md:top-[260px] z-40 rounded-full">
             <div class="flex space-x-1 p-2 overflow-x-auto text-xs font-bold uppercase tracking-widest no-scrollbar">
-                <button class="category-tab px-6 py-3 rounded-full text-white active" data-category="novedades"> Novedades</button>
-                <button class="category-tab px-6 py-3 rounded-full" data-category="organizadores"> Organizadores</button>
-                <button class="category-tab px-6 py-3 rounded-full" data-category="dama">Dama </button>
-                <button class="category-tab px-6 py-3 rounded-full" data-category="cuidado- personal">Cuidado personal</button>
-                <button class="category-tab px-6 py-3 rounded-full" data-category="cocina">Cocina </button>
-                <button class="category-tab px-6 py-3 rounded-full" data-category="invierno"> Invierno</button>
-                <button class="category-tab px-6 py-3 rounded-full" data-category="toldos">Toldos </button>
+                <button class="category-tab px-6 py-3 rounded-full text-white active">Novedades</button>
+                <button class="category-tab px-6 py-3 rounded-full text-gray-400">Organizadores </button>
+                <button class="category-tab px-6 py-3 rounded-full text-gray-400">Dama</button>
+                <button class="category-tab px-6 py-3 rounded-full text-gray-400">Cuidado personal</button>
+                <button class="category-tab px-6 py-3 rounded-full text-gray-400">Cocina</button>
+                <button class="category-tab px-6 py-3 rounded-full text-gray-400">Invierno</ button>
+                <button class="category-tab px-6 py-3 rounded-full text-gray-400">Toldos</button>
             </div>
         </div>
 
-        <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
             
-            <!-- Producto 1: Organizador de Baño -->
-            <div class="product-card bg-neutral-950 border border-gray-800 rounded-2xl p-5 flex flex-col items-center hover:border-purple-500 transition-all duration-300" data-category="novedades organizadores hogar">
+            <div class="group bg-neutral-950 border border-gray-800 rounded-2xl p-5 flex flex-col items-center hover:border-purple-500 transition-all duration-300">
                 <div class="relative aspect-square overflow-hidden bg-neutral-900 mb-5 rounded-xl w-full">
-                    <img src=" https://i.ibb.co/ fVPpYq31/1000982580.jpg " alt="Organizador de Baño" class="object-cover w-full h-full group-hover:scale-110 transition duration-500">
+                    <img src=" https://images.unsplash. com/photo-1596461404969- 9ae70f2830c1?q=80&w=1000 " alt="Producto" class="object-cover w-full h-full group-hover:scale-110 transition duration-500">
                     <span class="absolute top-3 left-3 bg-purple-600 text-white px-3 py-1 text-[10px] font-black uppercase rounded-lg shadow-lg">Novedad</span>
                 </div>
                 <h3 class="text-[10px] font-bold text-purple-400 uppercase tracking-[0.2em] mb-2">Hogar</h3>
-                <p class="font-extrabold text-base text-white mb-2 text-center uppercase">Organizador de Baño</p>
-                <p class="text-2xl font-black text-white mb-5">$12.990</p>
+                <p class="font-extrabold text-base text-white mb-2 text-center">Organizador Premium</p>
+                <p class="text-2xl font-black text-white mb-5">$15.990</p>
                 
-<a href=" https://wa.me/ 569XXXXXXXX?text=Hola,%20me% 20interesa%20el%20Organizador% 20de%20Baño ." target="_blank" class="w-full flex items-center justify-center space-x-3 bg-purple-600 hover:bg-purple-700 text-white font-black text-xs uppercase py-4 rounded-xl transition-all shadow-lg active:scale-95">                              
+<a href=" https://wa.me/ 569XXXXXXXX?text=Hola,%20me% 20interesa%20este%20producto ." target="_blank" class="w-full flex items-center justify-center space-x-3 bg-purple-600 hover:bg-purple-700 text-white font-black text-xs uppercase py-4 rounded-xl transition-all shadow-lg active:scale-95">               
                     <img src=" https://cdn-icons-png. flaticon.com/512/733/733585. png " alt="WhatsApp" class="h-4 w-4 invert">
                     <span>Consultar Stock</span>
                 </a>
             </div>
-
-            <!-- Producto 2: Set de Brochas de Maquillaje -->
-            <div class="product-card bg-neutral-950 border border-gray-800 rounded-2xl p-5 flex flex-col items-center hover:border-purple-500 transition-all duration-300" data-category="dama cuidado-personal belleza">
-                <div class="relative aspect-square overflow-hidden bg-neutral-900 mb-5 rounded-xl w-full">
-                    <img src=" https://i.ibb.co/Rz2j3fQ/ 1001001000.jpg " alt="Set de Brochas" class="object-cover w-full h-full group-hover:scale-110 transition duration-500">
-                    <span class="absolute top-3 left-3 bg-purple-600 text-white px-3 py-1 text-[10px] font-black uppercase rounded-lg shadow-lg">Oferta</span>
-                </div>
-                <h3 class="text-[10px] font-bold text-purple-400 uppercase tracking-[0.2em] mb-2">Belleza</h3>
-                <p class="font-extrabold text-base text-white mb-2 text-center uppercase">Set de Brochas de Maquillaje</p>
-                <p class="text-2xl font-black text-white mb-5">$8.500</p>
-                
-<a href=" https://wa.me/ 569XXXXXXXX?text=Hola,%20me% 20interesa%20el%20Set%20de% 20Brochas%20de%20Maquillaje ." target="_blank" class="w-full flex items-center justify-center space-x-3 bg-purple-600 hover:bg-purple-700 text-white font-black text-xs uppercase py-4 rounded-xl transition-all shadow-lg active:scale-95">                              
-                    <img src=" https://cdn-icons-png. flaticon.com/512/733/733585. png " alt="WhatsApp" class="h-4 w-4 invert">
-                    <span>Consultar Stock</span>
-                </a>
-            </div>
-
-            <!-- Producto 3: Cafetera Italiana -->
-            <div class="product-card bg-neutral-950 border border-gray-800 rounded-2xl p-5 flex flex-col items-center hover:border-purple-500 transition-all duration-300" data-category="cocina hogar hogar">
-                <div class="relative aspect-square overflow-hidden bg-neutral-900 mb-5 rounded-xl w-full">
-                    <img src=" https://i.ibb.co/T1QvT4P/ 1000999313-copia.jpg " alt="Cafetera Italiana" class="object-cover w-full h-full group-hover:scale-110 transition duration-500">
-                    <span class="absolute top-3 left-3 bg-purple-600 text-white px-3 py-1 text-[10px] font-black uppercase rounded-lg shadow-lg">Nuevo</span>
-                </div>
-                <h3 class="text-[10px] font-bold text-purple-400 uppercase tracking-[0.2em] mb-2">Cocina</h3>
-                <p class="font-extrabold text-base text-white mb-2 text-center uppercase">Cafetera Italiana</p>
-                <p class="text-2xl font-black text-white mb-5">$25.000</p>
-                
-<a href=" https://wa.me/ 569XXXXXXXX?text=Hola,%20me% 20interesa%20la%20Cafetera% 20Italiana ." target="_blank" class="w-full flex items-center justify-center space-x-3 bg-purple-600 hover:bg-purple-700 text-white font-black text-xs uppercase py-4 rounded-xl transition-all shadow-lg active:scale-95">                              
-                    <img src=" https://cdn-icons-png. flaticon.com/512/733/733585. png " alt="WhatsApp" class="h-4 w-4 invert">
-                    <span>Consultar Stock</span>
-                </a>
-            </div>
-
-            <!-- Producto 4: Manta Polar para Invierno -->
-            <div class="product-card bg-neutral-950 border border-gray-800 rounded-2xl p-5 flex flex-col items-center hover:border-purple-500 transition-all duration-300" data-category="invierno hogar hogar">
-                <div class="relative aspect-square overflow-hidden bg-neutral-900 mb-5 rounded-xl w-full">
-                    <img src=" https://i.ibb.co/W5W9qfS/ 1001001001.jpg " alt="Manta Polar Invierno" class="object-cover w-full h-full group-hover:scale-110 transition duration-500">
-                    <span class="absolute top-3 left-3 bg-purple-600 text-white px-3 py-1 text-[10px] font-black uppercase rounded-lg shadow-lg">Temporada</span>
-                </div>
-                <h3 class="text-[10px] font-bold text-purple-400 uppercase tracking-[0.2em] mb-2">Hogar</h3>
-                <p class="font-extrabold text-base text-white mb-2 text-center uppercase">Manta Polar para Invierno</p>
-                <p class="text-2xl font-black text-white mb-5">$18.000</p>
-                
-<a href=" https://wa.me/ 569XXXXXXXX?text=Hola,%20me% 20interesa%20la%20Manta% 20Polar%20para%20Invierno ." target="_blank" class="w-full flex items-center justify-center space-x-3 bg-purple-600 hover:bg-purple-700 text-white font-black text-xs uppercase py-4 rounded-xl transition-all shadow-lg active:scale-95">                              
-                    <img src=" https://cdn-icons-png. flaticon.com/512/733/733585. png " alt="WhatsApp" class="h-4 w-4 invert">
-                    <span>Consultar Stock</span>
-                </a>
-            </div>
-
-            <!-- Producto 5: Conjunto de Organizadores de Ropa -->
-            <div class="product-card bg-neutral-950 border border-gray-800 rounded-2xl p-5 flex flex-col items-center hover:border-purple-500 transition-all duration-300" data-category="organizadores hogar hogar">
-                <div class="relative aspect-square overflow-hidden bg-neutral-900 mb-5 rounded-xl w-full">
-                    <img src=" https://i.ibb.co/zXh9hQf/ 1001001002.jpg " alt="Set Organizadores Ropa" class="object-cover w-full h-full group-hover:scale-110 transition duration-500">
-                    <span class="absolute top-3 left-3 bg-purple-600 text-white px-3 py-1 text-[10px] font-black uppercase rounded-lg shadow-lg">Nuevo</span>
-                </div>
-                <h3 class="text-[10px] font-bold text-purple-400 uppercase tracking-[0.2em] mb-2">Hogar</h3>
-                <p class="font-extrabold text-base text-white mb-2 text-center lowercase">Set de Organizadores de Ropa</p>
-                <p class="text-2xl font-black text-white mb-5">$15.500</p>
-                
-<a href=" https://wa.me/ 569XXXXXXXX?text=Hola,%20me% 20interesa%20el%20Set%20de% 20Organizadores%20de%20Ropa ." target="_blank" class="w-full flex items-center justify-center space-x-3 bg-purple-600 hover:bg-purple-700 text-white font-black text-xs uppercase py-4 rounded-xl transition-all shadow-lg active:scale-95">                              
-                    <img src=" https://cdn-icons-png. flaticon.com/512/733/733585. png " alt="WhatsApp" class="h-4 w-4 invert">
-                    <span>Consultar Stock</span>
-                </a>
-            </div>
-
-             <!-- Producto 6: Set de Vasos de Cristal -->
-             <div class="product-card bg-neutral-950 border border-gray-800 rounded-2xl p-5 flex flex-col items-center hover:border-purple-500 transition-all duration-300" data-category="cocina hogar hogar">
-                <div class="relative aspect-square overflow-hidden bg-neutral-900 mb-5 rounded-xl w-full">
-                    <img src=" https://i.ibb.co/zXh9Qf/ 1001001003.jpg " alt="Set de Vasos Cristal" class="object-cover w-full h-full group-hover:scale-110 transition duration-500">
-                    <span class="absolute top-3 left-3 bg-purple-600 text-white px-3 py-1 text-[10px] font-black uppercase rounded-lg shadow-lg">Premium</span>
-                </div>
-                <h3 class="text-[10px] font-bold text-purple-400 uppercase tracking-[0.2em] mb-2">Hogar</h3>
-                <p class="font-extrabold text-base text-white mb-2 text-center uppercase">Set de Vasos de Cristal</p>
-                <p class="text-2xl font-black text-white mb-5">$29.990</p>
-                
-<a href=" https://wa.me/ 569XXXXXXXX?text=Hola,%20me% 20interesa%20el%20Set%20de% 20Vasos%20de%20Cristal ." target="_blank" class="w-full flex items-center justify-center space-x-3 bg-purple-600 hover:bg-purple-700 text-white font-black text-xs uppercase py-4 rounded-xl transition-all shadow-lg active:scale-95">                              
-                    <img src=" https://cdn-icons-png. flaticon.com/512/733/733585. png " alt="WhatsApp" class="h-4 w-4 invert">
-                    <span>Consultar Stock</span>
-                </a>
-            </div>
-
-            <!-- Producto 7: Crema Hidratante Facial -->
-            <div class="product-card bg-neutral-950 border border-gray-800 rounded-2xl p-5 flex flex-col items-center hover:border-purple-500 transition-all duration-300" data-category="cuidado- personal belleza">
-                <div class="relative aspect-square overflow-hidden bg-neutral-900 mb-5 rounded-xl w-full">
-                    <img src=" https://i.ibb.co/N9p7W5r/ 1001001004.jpg " alt="Crema Hidratante" class="object-cover w-full h-full group-hover:scale-110 transition duration-500">
-                    <span class="absolute top-3 left-3 bg-purple-600 text-white px-3 py-1 text-[10px] font-black uppercase rounded-lg shadow-lg">Recomendado</span>
-                </div>
-                <h3 class="text-[10px] font-bold text-purple-400 uppercase tracking-[0.2em] mb-2">Cuidado Personal</h3>
-                <p class="font-extrabold text-base text-white mb-2 text-center uppercase">Crema Hidratante Facial</p>
-                <p class="text-2xl font-black text-white mb-5">$11.000</p>
-                
-<a href=" https://wa.me/ 569XXXXXXXX?text=Hola,%20me% 20interesa%20la%20Crema% 20Hidratante%20Facial ." target="_blank" class="w-full flex items-center justify-center space-x-3 bg-purple-600 hover:bg-purple-700 text-white font-black text-xs uppercase py-4 rounded-xl transition-all shadow-lg active:scale-95">                              
-                    <img src=" https://cdn-icons-png. flaticon.com/512/733/733585. png " alt="WhatsApp" class="h-4 w-4 invert">
-                    <span>Consultar Stock</span>
-                </a>
-            </div>
-
-            <!-- Producto 8: Paraguas Plegable y Resistente -->
-            <div class="product-card bg-neutral-950 border border-gray-800 rounded-2xl p-5 flex flex-col items-center hover:border-purple-500 transition-all duration-300" data-category="toldos hogar hogar">
-                <div class="relative aspect-square overflow-hidden bg-neutral-900 mb-5 rounded-xl w-full">
-                    <img src=" https://i.ibb.co/KzYq91h/ 1001001005.jpg " alt="Paraguas Plegables" class="object-cover w-full h-full group-hover:scale-110 transition duration-500">
-                    <span class="absolute top-3 left-3 bg-purple-600 text-white px-3 py-1 text-[10px] font-black uppercase rounded-lg shadow-lg">Práctico</span>
-                </div>
-                <h3 class="text-[10px] font-bold text-purple-400 uppercase tracking-[0.2em] mb-2">Accesorios</h3>
-                <p class="font-extrabold text-base text-white mb-2 text-center uppercase">Paraguas Plegables y Resistentes</p>
-                <p class="text-2xl font-black text-white mb-5">$9.990</p>
-                
-<a href=" https://wa.me/ 569XXXXXXXX?text=Hola,%20me% 20interesa%20el%20Paraguas% 20Plegable%20y%20Resistente ." target="_blank" class="w-full flex items-center justify-center space-x-3 bg-purple-600 hover:bg-purple-700 text-white font-black text-xs uppercase py-4 rounded-xl transition-all shadow-lg active:scale-95">                              
-                    <img src=" https://cdn-icons-png. flaticon.com/512/733/733585. png " alt="WhatsApp" class="h-4 w-4 invert">
-                    <span>Consultar Stock</span>
-                </a>
-            </div>
-            
-            <!-- Aquí puedes agregar más productos, cada uno dentro de un div con la clase 'product-card' -->
 
         </div>
     </main>
 
-<a href=" https://wa.me/ 569XXXXXXXX " target="_blank" class="fixed bottom-8 right-8 z-50 bg-green-500 hover:bg-green-600 p-5 rounded-full shadow-[0_0_20px_rgba(34,197, 94,0.5)] transition duration-300 hover:scale-110 active:scale-90">      
+<a href=" https://wa.me/ 569XXXXXXXX " target="_blank" class="fixed bottom-8 right-8 z-50 bg-green-500 hover:bg-green-600 p-5 rounded-full shadow-[0_0_20px_rgba(34,197, 94,0.5)] transition duration-300 hover:scale-110 active:scale-90">   
         <img src=" https://cdn-icons-png. flaticon.com/512/733/733585. png " alt="WhatsApp" class="h-8 w-8 invert">
     </a>
 
-    <script>
-        document.addEventListener(' DOMContentLoaded', function() {
-            const categoryTabs = document.querySelectorAll('. category-tab');
-            const productGrid = document.getElementById(' product-grid');
-            const productos = document.querySelectorAll('. tarjeta-producto');
+</body>
+</html>
 
-            // Función para mostrar los productos de una categoría específica
-            función filterProducts(categoría) {
-                productos.forEach(producto => {
-                    // Si la categoría es 'all' o la categoría del producto incluye la seleccionada, muéstralo
-                    si (categoría === 'todas' || producto.dataset.categoría.includes (categoría)) {
-                        producto.estilo.display = 'flex'; // Usar flex para mantener el diseño
-                    } demás {
-                        producto.estilo.visualización = 'ninguno';
-                    }
-                });
-            }
+Andrianela Villasmil <ventasonline2020chilenuevo@gmail.com>
+14:57 (hace 13 minutos)
+to andrianela04@gmail.com
 
-            // Manejar clics en las pestañas de categoría
-            categoryTabs.forEach(tab => {
-                tab.addEventListener('click', function() {
-                    // Quitar la clase 'active' de todas las pestañas
-                    categoryTabs.forEach(t => t.classList.remove('active'));
-                    // Agregar la clase 'activa' a la pestaña clicada
-                    this.classList.add('active');
 
-                    // Obtener la categoría de la pestaña clicada
-                    const selectedCategory = this.dataset.category;
-                    filterProducts( categoríaseleccionada);
-                });
-            });
 
-            // Inicializar mostrando todas las novedades al cargar la página
-            filterProducts('novedades'); 
+---------- Mensaje reenviado ---------
+De: Andri Villa < andrianela04@gmail.com >
+Fecha: miércoles, 6 de mayo de 2026 a las 12:44 pm
+Asunto: Github
+Para: ventasonline2020chilenuevo@ gmail.com < ventasonline2020chilenuevo@ gmail.com >
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIENDA VENTAS 2020</title>
+    <script src=" https://cdn.tailwindcss. com "></script>
+    <link href=" https://fonts. googleapis.com/css2?family= Inter:wght@400;600;800& display=swap " rel="stylesheet">
+    <style>
+        cuerpo {
+            font-family: 'Inter', sans-serif;
+            margen: 0;
+            color de fondo: #000000;
+        }
+
+        /* Fondo cómodo de ondas blanco y morado */
+        .sofisticado-fondo {
+            imagen de fondo: 
+                gradiente-lineal(135 grados, rgba(147, 51, 234, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%),
+                url("data:image/svg+xml,%3Csvg xmlns=' http://www.w3.org/2000/ svg ' width='1000' height='600' viewBox='0 0 1000 600'%3E%3Cpath d='M0,160 C150,250 350,100 500,160 C650,220 850,100 1000,160 L1000,600 L0,600 Z' fill='%239333ea' fill-opacity='0.1'/%3E%3Cpath d='M0,360 C150,450 350,300 500,360 C650,420 850,300 1000,360 L1000,600 L0,600 Z' relleno='%23ffffff' relleno-opacidad='0.05'/%3E% 3C/ svg%3E");
+            tamaño de fondo: cubrir;
+            posición de fondo: centro;
+            adjunto de fondo: fijo;
+        }
+
+        .category-tab:hover {
+            color: blanco;
+            color de fondo: #9333ea;
+        }
+        .category-tab.active {
+            color: blanco;
+            color de fondo: #9333ea;
+        }
+        
+        .no-scrollbar::-webkit- scrollbar {
+            mostrar: ninguno;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: ninguno;
+            ancho de la barra de desplazamiento: ninguno;
+        }
+    </style>
+</head>
+<body class="text-white mature-bg">
+
+    <header class="border-b border-gray-800 bg-black sticky top-0 z-50 py-8">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col items-center text-center">
             
-            // animación Aplicar de entrada a los productos cuando la página está lista
-            productos.forEach((producto, índice) => {
-                product.style.animationDelay = `${index * 0.1}s`; // Retraso incremental para cada producto
-            });
-        });
-    </script>
+            <div class="mb-4">
+                <img src=" https://i.ibb.co/ VpmWMv8V/1000999313.png " alt="Logo Ventas 2020" class="h-32 md:h-40 object-contain">
+            </div>
+            
+            <h1 class="text-3xl md:text-5xl font-black text-white uppercase tracking-[0.2em] mb-2">VENTAS 2020 TIENDA</h1>
+            
+            <p class="text-sm md:text-lg text-gray-400 font-medium tracking-wide">Región Metropolitana de Santiago, Chile.</p>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 py-8">
+        <div class="mb-10 flex justify-center border-b border-gray-800 bg-black/90 backdrop-blur-md sticky top-[220px] md:top-[260px] z-40 rounded-full">
+            <div class="flex space-x-1 p-2 overflow-x-auto text-xs font-bold uppercase tracking-widest no-scrollbar">
+                <button class="category-tab px-6 py-3 rounded-full text-white active">Novedades</button>
+                <button class="category-tab px-6 py-3 rounded-full text-gray-400">Organizadores </button>
+                <button class="category-tab px-6 py-3 rounded-full text-gray-400">Dama</button>
+                <button class="category-tab px-6 py-3 rounded-full text-gray-400">Cuidado personal</button>
+                <button class="category-tab px-6 py-3 rounded-full text-gray-400">Cocina</button>
+                <button class="category-tab px-6 py-3 rounded-full text-gray-400">Invierno</ button>
+                <button class="category-tab px-6 py-3 rounded-full text-gray-400">Toldos</button>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+            
+            <div class="group bg-neutral-950 border border-gray-800 rounded-2xl p-5 flex flex-col items-center hover:border-purple-500 transition-all duration-300">
+                <div class="relative aspect-square overflow-hidden bg-neutral-900 mb-5 rounded-xl w-full">
+                    <img src=" https://images.unsplash. com/photo-1596461404969- 9ae70f2830c1?q=80&w=1000 " alt="Producto" class="object-cover w-full h-full group-hover:scale-110 transition duration-500">
+                    <span class="absolute top-3 left-3 bg-purple-600 text-white px-3 py-1 text-[10px] font-black uppercase rounded-lg shadow-lg">Novedad</span>
+                </div>
+                <h3 class="text-[10px] font-bold text-purple-400 uppercase tracking-[0.2em] mb-2">Hogar</h3>
+                <p class="font-extrabold text-base text-white mb-2 text-center">Organizador Premium</p>
+                <p class="text-2xl font-black text-white mb-5">$15.990</p>
+                
+<a href=" https://wa.me/ 569XXXXXXXX?text=Hola,%20me% 20interesa%20este%20producto ." target="_blank" class="w-full flex items-center justify-center space-x-3 bg-purple-600 hover:bg-purple-700 text-white font-black text-xs uppercase py-4 rounded-xl transition-all shadow-lg active:scale-95">               
+                    <img src=" https://cdn-icons-png. flaticon.com/512/733/733585. png " alt="WhatsApp" class="h-4 w-4 invert">
+                    <span>Consultar Stock</span>
+                </a>
+            </div>
+
+        </div>
+    </main>
+
+<a href=" https://wa.me/ 569XXXXXXXX " target="_blank" class="fixed bottom-8 right-8 z-50 bg-green-500 hover:bg-green-600 p-5 rounded-full shadow-[0_0_20px_rgba(34,197, 94,0.5)] transition duration-300 hover:scale-110 active:scale-90">   
+        <img src=" https://cdn-icons-png. flaticon.com/512/733/733585. png " alt="WhatsApp" class="h-8 w-8 invert">
+    </a>
+
 </body>
 </html>
