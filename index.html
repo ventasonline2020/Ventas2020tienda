@@ -8,99 +8,93 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; background-color: #000000; color: white; margin: 0; }
-        .wave-background {
-            background-color: #0d0a16;
-            background-image: url("https://i.ibb.co/1000999472/background-wave.png"); /* Imagen de fondo ondulada */
-            background-size: cover; padding: 60px 20px; text-align: center;
+        .hero-bg {
+            background: linear-gradient(rgba(13, 10, 22, 0.8), rgba(13, 10, 22, 0.8)), 
+                        url('https://raw.githubusercontent.com/Venta2020/Tienda/main/background.png');
+            background-size: cover; padding: 80px 20px; text-align: center;
         }
-        .nav-bar { background: rgba(30, 30, 30, 0.9); border-radius: 50px; padding: 10px 25px; margin-top: -25px; box-shadow: 0 4px 20px rgba(0,0,0,0.5); }
-        .nav-btn { font-size: 11px; font-weight: 700; color: #a1a1aa; text-transform: uppercase; padding: 8px 15px; border-radius: 20px; }
-        .nav-btn.active { background: #ffffff; color: #000000; }
+        .nav-container { background: rgba(39, 39, 42, 0.9); border-radius: 50px; padding: 10px 20px; margin-top: -30px; }
+        .nav-link { color: #a1a1aa; font-size: 12px; font-weight: 700; text-transform: uppercase; padding: 8px 16px; border-radius: 20px; transition: 0.3s; }
+        .nav-link.active { background: white; color: black; }
+        .product-card { background: #111111; border: 1px solid rgba(255,255,255,0.1); border-radius: 24px; transition: 0.3s; }
+        .product-card:hover { border-color: rgba(255,255,255,0.3); transform: translateY(-5px); }
         .modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.95); z-index: 100; align-items: center; justify-content: center; padding: 20px; }
         .modal.active { display: flex; }
-        .no-scrollbar::-webkit-scrollbar { display: none; }
     </style>
 </head>
 <body>
 
-    <div class="wave-background">
-        <img src="https://i.postimg.cc/9F7p949k/1000999313.png" alt="Logo Ventas2020" class="h-44 md:h-52 mx-auto mb-4">
-        <h1 class="text-4xl md:text-5xl font-black uppercase tracking-tighter mb-1">VENTAS 2020 TIENDA</h1>
-        <p class="text-sm text-gray-300 font-medium italic">Región Metropolitana de Santiago, Chile.</p>
-    </div>
+    <header class="hero-bg">
+        <img src="https://images2.imgbox.com/3e/20/VvYf0K9u_o.png" alt="V20 Logo" class="h-40 mx-auto mb-6">
+        <h1 class="text-5xl font-black italic tracking-tighter uppercase mb-2">VENTAS 2020 TIENDA</h1>
+        <p class="text-gray-400 font-medium">Región Metropolitana de Santiago, Chile.</p>
+    </header>
 
-    <div class="flex justify-center px-4 relative z-10">
-        <nav class="nav-bar flex space-x-1 overflow-x-auto no-scrollbar">
-            <button class="nav-btn active">Novedades</button>
-            <button class="nav-btn">Organizadores</button>
-            <button class="nav-btn">Dama</button>
-            <button class="nav-btn">Cuidado personal</button>
-            <button class="nav-btn">Cocina</button>
-            <button class="nav-btn">Invierno</button>
-            <button class="nav-btn">Toldos</button>
+    <div class="flex justify-center px-4 sticky top-4 z-50">
+        <nav class="nav-container flex space-x-2 overflow-x-auto whitespace-nowrap shadow-2xl">
+            <a href="#" class="nav-link active">Novedades</a>
+            <a href="#" class="nav-link">Organizadores</a>
+            <a href="#" class="nav-link">Dama</a>
+            <a href="#" class="nav-link">Cuidado Personal</a>
+            <a href="#" class="nav-link">Cocina</a>
+            <a href="#" class="nav-link">Invierno</a>
+            <a href="#" class="nav-link">Toldos</a>
         </nav>
     </div>
 
-    <main class="max-w-7xl mx-auto px-6 py-16">
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-            
-            <div class="bg-[#111111] border border-white/10 rounded-[30px] overflow-hidden group">
-                <div class="aspect-square bg-[#1a1a1a] relative cursor-pointer" onclick="toggleModal(true)">
-                    <img src="https://i.postimg.cc/fTh4fXfB/IMG-20260401-WA0020.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                    <div class="absolute top-4 left-4 bg-white text-black text-[9px] font-black px-3 py-1 rounded-full uppercase">Novedad</div>
-                </div>
-                <div class="p-6 text-center">
-                    <p class="text-[9px] text-purple-500 font-black uppercase tracking-widest mb-1">Hogar</p>
-                    <h3 class="font-bold text-white text-base mb-1 uppercase">Organizador de Baño</h3>
-                    <p class="text-xl font-black text-white mb-5">$12.990</p>
-                    <button onclick="toggleModal(true)" class="w-full bg-zinc-200 hover:bg-white text-black py-3 rounded-2xl font-bold text-[10px] uppercase transition">Ver Detalles</button>
-                </div>
+    <main class="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+        
+        <div class="product-card group cursor-pointer" onclick="toggleModal(true)">
+            <div class="aspect-square relative overflow-hidden rounded-t-24">
+                <img src="https://images2.imgbox.com/f0/7f/P75pGZ8P_o.jpg" class="w-full h-full object-cover">
+                <span class="absolute top-4 left-4 bg-white text-black text-[10px] font-black px-3 py-1 rounded-full uppercase">Novedad</span>
             </div>
-
+            <div class="p-6 text-center">
+                <p class="text-purple-500 text-[10px] font-black uppercase mb-1">Hogar</p>
+                <h3 class="font-bold text-lg mb-1">ORGANIZADOR DE BAÑO</h3>
+                <p class="text-2xl font-black mb-6">$12.990</p>
+                <button class="w-full bg-zinc-800 group-hover:bg-white group-hover:text-black py-3 rounded-xl font-bold text-xs uppercase transition">Ver Detalles</button>
+            </div>
         </div>
+
     </main>
 
-    <div id="prodModal" class="modal" onclick="if(event.target == this) toggleModal(false)">
-        <div class="max-w-5xl w-full bg-[#0a0a0a] rounded-[40px] overflow-hidden relative flex flex-col md:flex-row border border-white/10">
-            <button onclick="toggleModal(false)" class="absolute top-6 right-8 text-white/40 hover:text-white text-4xl">&times;</button>
+    <div id="productModal" class="modal" onclick="if(event.target == this) toggleModal(false)">
+        <div class="max-w-5xl w-full bg-[#0a0a0a] rounded-[40px] overflow-hidden flex flex-col md:flex-row relative border border-white/10">
+            <button onclick="toggleModal(false)" class="absolute top-6 right-8 text-white/50 hover:text-white text-4xl">&times;</button>
             
-            <div class="md:w-1/2 p-8 bg-[#111111]">
-                <img id="mainView" src="https://i.postimg.cc/fTh4fXfB/IMG-20260401-WA0020.jpg" class="rounded-3xl w-full aspect-square object-cover mb-4 border border-white/5">
+            <div class="md:w-1/2 p-8">
+                <img id="mainImg" src="https://images2.imgbox.com/f0/7f/P75pGZ8P_o.jpg" class="w-full aspect-square object-cover rounded-3xl mb-4">
                 <div class="grid grid-cols-4 gap-2">
-                    <img src="https://i.postimg.cc/fTh4fXfB/IMG-20260401-WA0020.jpg" class="rounded-xl cursor-pointer opacity-60 hover:opacity-100" onclick="document.getElementById('mainView').src=this.src">
-                    <img src="https://i.postimg.cc/906mQp8D/1000982580.jpg" class="rounded-xl cursor-pointer opacity-60 hover:opacity-100" onclick="document.getElementById('mainView').src=this.src">
-                    <img src="https://i.postimg.cc/zXvXp1Xz/1000982585.jpg" class="rounded-xl cursor-pointer opacity-60 hover:opacity-100" onclick="document.getElementById('mainView').src=this.src">
-                    <img src="https://i.postimg.cc/7Z9yZ2pL/1000982583.jpg" class="rounded-xl cursor-pointer opacity-60 hover:opacity-100" onclick="document.getElementById('mainView').src=this.src">
+                    <img src="https://images2.imgbox.com/f0/7f/P75pGZ8P_o.jpg" class="rounded-xl cursor-pointer opacity-50 hover:opacity-100" onclick="document.getElementById('mainImg').src=this.src">
+                    <img src="https://images2.imgbox.com/56/67/V9pZNo2t_o.jpg" class="rounded-xl cursor-pointer opacity-50 hover:opacity-100" onclick="document.getElementById('mainImg').src=this.src">
+                    <img src="https://images2.imgbox.com/6c/20/xH7fOQxJ_o.jpg" class="rounded-xl cursor-pointer opacity-60 hover:opacity-100" onclick="document.getElementById('mainImg').src=this.src">
+                    <img src="https://images2.imgbox.com/f2/0a/6Gz789Ff_o.jpg" class="rounded-xl cursor-pointer opacity-60 hover:opacity-100" onclick="document.getElementById('mainImg').src=this.src">
                 </div>
             </div>
 
             <div class="md:w-1/2 p-10 flex flex-col justify-center">
-                <h2 class="text-3xl font-black mb-3 uppercase tracking-tighter">Organizador de Baño</h2>
-                <p class="text-purple-400 text-sm font-bold mb-6 italic">Perfecto para mantener el orden de tus cosas personales.</p>
-                
-                <ul class="text-gray-400 text-[12px] space-y-2 mb-8 leading-relaxed">
-                    <li>• Fácil de armar y desarmar, no ocupa espacio extra.</li>
-                    <li>• No necesita clavos ni taladros en la pared.</li>
-                    <li>• Material resistente al agua y duradero.</li>
+                <h2 class="text-3xl font-black mb-4 uppercase">Organizador de Baño</h2>
+                <p class="text-purple-400 font-bold mb-6 italic text-sm">Perfecto para mantener el orden de tus cosas personales.</p>
+                <ul class="text-gray-400 text-xs space-y-2 mb-8">
+                    <li>• Cómodo, fácil de armar y no ocupa espacio.</li>
+                    <li>• No necesita clavos ni taladro.</li>
+                    <li>• Material resistente al agua.</li>
                 </ul>
-
-                <div class="grid grid-cols-3 gap-4 border-y border-white/10 py-6 mb-8 text-center">
-                    <div><span class="block text-[10px] text-gray-500 font-bold uppercase">Alto</span><span class="text-lg font-black">160 cm</span></div>
-                    <div><span class="block text-[10px] text-gray-500 font-bold uppercase">Ancho</span><span class="text-lg font-black">47 cm</span></div>
-                    <div><span class="block text-[10px] text-gray-500 font-bold uppercase">Fondo</span><span class="text-lg font-black">26 cm</span></div>
+                <div class="grid grid-cols-3 gap-2 border-y border-white/10 py-6 mb-8 text-center">
+                    <div><p class="text-[10px] text-gray-500 font-bold">ALTO</p><p class="text-lg font-black">160 cm</p></div>
+                    <div><p class="text-[10px] text-gray-500 font-bold">ANCHO</p><p class="text-lg font-black">47 cm</p></div>
+                    <div><p class="text-[10px] text-gray-500 font-bold">FONDO</p><p class="text-lg font-black">26 cm</p></div>
                 </div>
-
-                <a href="https://wa.me/569XXXXXXXX" class="w-full bg-[#25D366] text-white py-4 rounded-2xl flex items-center justify-center space-x-3 font-bold uppercase tracking-widest shadow-lg hover:bg-[#1fb355] transition">
-                    <span>Comprar por WhatsApp</span>
-                </a>
+                <a href="https://wa.me/569XXXXXXXX" class="w-full bg-[#25D366] text-white py-4 rounded-2xl text-center font-bold uppercase shadow-lg">Pedir por WhatsApp</a>
             </div>
         </div>
     </div>
 
     <script>
         function toggleModal(show) {
-            const m = document.getElementById('prodModal');
-            m.classList.toggle('active', show);
+            const modal = document.getElementById('productModal');
+            modal.classList.toggle('active', show);
             document.body.style.overflow = show ? 'hidden' : 'auto';
         }
     </script>
