@@ -5,101 +5,93 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VENTAS 2020 TIENDA</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #000000; color: white; margin: 0; }
-        .hero-header { background-color: #0d0a16; padding: 60px 20px; text-align: center; }
-        .nav-scroll { background: #1a1a1a; border-radius: 50px; padding: 10px; margin-top: -25px; box-shadow: 0 10px 40px rgba(0,0,0,0.8); }
-        .btn-nav { color: #888; font-size: 11px; font-weight: 800; text-transform: uppercase; padding: 10px 18px; border-radius: 25px; transition: 0.3s; white-space: nowrap; }
-        .btn-nav.active { background: white; color: black; }
-        .product-card { background: #0f0f0f; border: 1px solid #222; border-radius: 30px; transition: 0.4s; overflow: hidden; }
-        .product-card:hover { border-color: #444; transform: translateY(-8px); }
-        .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.98); z-index: 1000; align-items: center; justify-content: center; padding: 15px; }
-        .modal-overlay.open { display: flex; }
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            background-color: #000000;
+        }
+
+        /* Fondo sofisticado de ondas blanco y morado */
+        .sophisticated-bg {
+            background-image: 
+                linear-gradient(135deg, rgba(147, 51, 234, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%),
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1000' height='600' viewBox='0 0 1000 600'%3E%3Cpath d='M0,160 C150,250 350,100 500,160 C650,220 850,100 1000,160 L1000,600 L0,600 Z' fill='%239333ea' fill-opacity='0.1'/%3E%3Cpath d='M0,360 C150,450 350,300 500,360 C650,420 850,300 1000,360 L1000,600 L0,600 Z' fill='%23ffffff' fill-opacity='0.05'/%3E%3C/svg%3E");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .category-tab:hover {
+            color: white;
+            background-color: #9333ea;
+        }
+        .category-tab.active {
+            color: white;
+            background-color: #9333ea;
+        }
+        
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
     </style>
 </head>
-<body>
+<body class="text-white sophisticated-bg">
 
-   <header class="hero-header">
-   <a href="https://ventasonline2020.github.io/Ventas2020tienda/">
-      <img src="https://i.ibb.co/pryv43p2/1000999313-copia.png" alt="Ventas2020 Logo" border="0" style="height: 80px; width: auto;">
-   </a>
-
-   <h1 class="text-4xl font-black italic uppercase tracking-tighter">VENTAS 2020 TIENDA</h1>
-   <p class="text-xs text-gray-500 mt-2">Región Metropolitana de Santiago, Chile.</p>
-</header>
-
-    <div class="flex justify-center px-4 sticky top-6 z-50">
-        <nav class="nav-scroll flex space-x-1 overflow-x-auto no-scrollbar">
-            <button class="btn-nav active">Novedades</button>
-            <button class="btn-nav">Organizadores</button>
-            <button class="btn-nav">Dama</button>
-            <button class="btn-nav">Cuidado Personal</button>
-            <button class="btn-nav">Cocina</button>
-            <button class="btn-nav">Invierno</button>
-            <button class="btn-nav">Toldos</button>
-        </nav>
-    </div>
-
-    <main class="max-w-6xl mx-auto px-6 py-20">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+    <header class="border-b border-gray-800 bg-black sticky top-0 z-50 py-8">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col items-center text-center">
             
-            <div class="product-card group cursor-pointer" onclick="openProduct()">
-                <div class="aspect-[4/5] relative">
-                    <img src="https://i.ibb.co/fVPpYq31/1000982580.jpg" class="w-full h-full object-cover">
-                    <div class="absolute top-4 left-4 bg-white text-black text-[9px] font-black px-3 py-1 rounded-full uppercase">Top Ventas</div>
+            <div class="mb-4">
+                <img src="https://i.ibb.co/VpmWMv8V/1000999313.png" alt="Logo Ventas 2020" class="h-32 md:h-40 object-contain">
+            </div>
+            
+            <h1 class="text-3xl md:text-5xl font-black text-white uppercase tracking-[0.2em] mb-2">VENTAS 2020 TIENDA</h1>
+            
+            <p class="text-sm md:text-lg text-gray-400 font-medium tracking-wide">Región Metropolitana de Santiago, Chile.</p>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 py-8">
+        <div class="mb-10 flex justify-center border-b border-gray-800 bg-black/90 backdrop-blur-md sticky top-[220px] md:top-[260px] z-40 rounded-full">
+            <div class="flex space-x-1 p-2 overflow-x-auto text-xs font-bold uppercase tracking-widest no-scrollbar">
+                <button class="category-tab px-6 py-3 rounded-full text-white active">Novedades</button>
+                <button class="category-tab px-6 py-3 rounded-full text-gray-400">Organizadores</button>
+                <button class="category-tab px-6 py-3 rounded-full text-gray-400">Dama</button>
+                <button class="category-tab px-6 py-3 rounded-full text-gray-400">Cuidado personal</button>
+                <button class="category-tab px-6 py-3 rounded-full text-gray-400">Cocina</button>
+                <button class="category-tab px-6 py-3 rounded-full text-gray-400">Invierno</button>
+                <button class="category-tab px-6 py-3 rounded-full text-gray-400">Toldos</button>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+            
+            <div class="group bg-neutral-950 border border-gray-800 rounded-2xl p-5 flex flex-col items-center hover:border-purple-500 transition-all duration-300">
+                <div class="relative aspect-square overflow-hidden bg-neutral-900 mb-5 rounded-xl w-full">
+                    <img src="https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?q=80&w=1000" alt="Producto" class="object-cover w-full h-full group-hover:scale-110 transition duration-500">
+                    <span class="absolute top-3 left-3 bg-purple-600 text-white px-3 py-1 text-[10px] font-black uppercase rounded-lg shadow-lg">Novedad</span>
                 </div>
-                <div class="p-8">
-                    <p class="text-purple-500 text-[10px] font-black mb-1 uppercase">Hogar / Baño</p>
-                    <h3 class="text-xl font-bold mb-2">ORGANIZADOR DE BAÑO</h3>
-                    <div class="flex justify-between items-end">
-                        <span class="text-3xl font-black">$12.990</span>
-                        <button class="bg-white text-black text-[10px] font-black px-5 py-3 rounded-xl uppercase">Detalles</button>
-                    </div>
-                </div>
+                <h3 class="text-[10px] font-bold text-purple-400 uppercase tracking-[0.2em] mb-2">Hogar</h3>
+                <p class="font-extrabold text-base text-white mb-2 text-center">Organizador Premium</p>
+                <p class="text-2xl font-black text-white mb-5">$15.990</p>
+                
+                <a href="https://wa.me/569XXXXXXXX?text=Hola,%20me%20interesa%20este%20producto." target="_blank" class="w-full flex items-center justify-center space-x-3 bg-purple-600 hover:bg-purple-700 text-white font-black text-xs uppercase py-4 rounded-xl transition-all shadow-lg active:scale-95">
+                    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" class="h-4 w-4 invert">
+                    <span>Consultar Stock</span>
+                </a>
             </div>
 
         </div>
     </main>
 
-    <div id="modal" class="modal-overlay" onclick="if(event.target == this) closeProduct()">
-        <div class="max-w-4xl w-full bg-[#050505] rounded-[40px] border border-white/10 overflow-hidden relative flex flex-col md:flex-row">
-            <button onclick="closeProduct()" class="absolute top-6 right-8 text-white/30 hover:text-white text-4xl font-light">&times;</button>
-            
-            <div class="md:w-1/2 p-6 bg-[#0a0a0a]">
-                <img id="view" src="https://i.ibb.co/fVPpYq31/1000982580.jpg" class="w-full aspect-square object-cover rounded-3xl mb-4 shadow-2xl">
-                <div class="grid grid-cols-4 gap-2">
-                    <img src="https://i.ibb.co/fVPpYq31/1000982580.jpg" class="rounded-lg cursor-pointer hover:ring-2 ring-white" onclick="document.getElementById('view').src=this.src">
-                    <img src="https://i.ibb.co/v666V02y/1000982583.jpg" class="rounded-lg cursor-pointer hover:ring-2 ring-white" onclick="document.getElementById('view').src=this.src">
-                    <img src="https://i.ibb.co/5XfP9t4Z/1000982584.jpg" class="rounded-lg cursor-pointer hover:ring-2 ring-white" onclick="document.getElementById('view').src=this.src">
-                    <img src="https://i.ibb.co/9kS7mS30/1000982585.jpg" class="rounded-lg cursor-pointer hover:ring-2 ring-white" onclick="document.getElementById('view').src=this.src">
-                </div>
-            </div>
+    <a href="https://wa.me/569XXXXXXXX" target="_blank" class="fixed bottom-8 right-8 z-50 bg-green-500 hover:bg-green-600 p-5 rounded-full shadow-[0_0_20px_rgba(34,197,94,0.5)] transition duration-300 hover:scale-110 active:scale-90">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" class="h-8 w-8 invert">
+    </a>
 
-            <div class="md:w-1/2 p-10 flex flex-col justify-center">
-                <h2 class="text-3xl font-black mb-2 uppercase">Organizador Multiuso</h2>
-                <p class="text-purple-400 font-bold italic mb-6">Optimiza tu espacio sin perforar paredes.</p>
-                
-                <div class="grid grid-cols-3 gap-4 border-y border-white/5 py-6 mb-8 text-center">
-                    <div><p class="text-[9px] text-gray-500 font-bold">ALTO</p><p class="text-xl font-black">160cm</p></div>
-                    <div><p class="text-[9px] text-gray-500 font-bold">ANCHO</p><p class="text-xl font-black">47cm</p></div>
-                    <div><p class="text-[9px] text-gray-500 font-bold">FONDO</p><p class="text-xl font-black">26cm</p></div>
-                </div>
-
-                <ul class="text-gray-400 text-xs space-y-2 mb-10">
-                    <li>• Estructura metálica resistente al agua.</li>
-                    <li>• 3 Niveles de gran capacidad.</li>
-                    <li>• Incluye porta papel y ganchos laterales.</li>
-                </ul>
-
-                <a href="https://wa.me/569XXXXXXXX" class="w-full bg-[#25D366] py-4 rounded-2xl text-center font-black uppercase text-sm shadow-[0_0_20px_rgba(37,211,102,0.3)]">Consultar Disponibilidad</a>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        function openProduct() { document.getElementById('modal').classList.add('open'); document.body.style.overflow = 'hidden'; }
-        function closeProduct() { document.getElementById('modal').classList.remove('open'); document.body.style.overflow = 'auto'; }
-    </script>
 </body>
 </html>
