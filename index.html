@@ -8,95 +8,106 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; background-color: #000000; color: white; margin: 0; }
-        .hero-bg {
-            background: linear-gradient(rgba(13, 10, 22, 0.8), rgba(13, 10, 22, 0.8)), 
-                        url('https://raw.githubusercontent.com/Venta2020/Tienda/main/background.png');
-            background-size: cover; padding: 80px 20px; text-align: center;
+        .hero-section {
+            background-color: #0d0a16;
+            padding: 80px 20px; text-align: center;
         }
-        .nav-container { background: rgba(39, 39, 42, 0.9); border-radius: 50px; padding: 10px 20px; margin-top: -30px; }
-        .nav-link { color: #a1a1aa; font-size: 12px; font-weight: 700; text-transform: uppercase; padding: 8px 16px; border-radius: 20px; transition: 0.3s; }
-        .nav-link.active { background: white; color: black; }
-        .product-card { background: #111111; border: 1px solid rgba(255,255,255,0.1); border-radius: 24px; transition: 0.3s; }
-        .product-card:hover { border-color: rgba(255,255,255,0.3); transform: translateY(-5px); }
+        .nav-bar { 
+            background: rgba(30, 30, 30, 0.9); 
+            border-radius: 50px; 
+            padding: 12px 24px; 
+            margin-top: -30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        .nav-item { 
+            color: #a1a1aa; 
+            font-size: 11px; 
+            font-weight: 700; 
+            text-transform: uppercase; 
+            padding: 8px 16px; 
+            border-radius: 20px;
+            white-space: nowrap;
+        }
+        .nav-item.active { background: white; color: black; }
         .modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.95); z-index: 100; align-items: center; justify-content: center; padding: 20px; }
         .modal.active { display: flex; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
     </style>
 </head>
 <body>
 
-    <header class="hero-bg">
-        <img src="https://images2.imgbox.com/3e/20/VvYf0K9u_o.png" alt="V20 Logo" class="h-40 mx-auto mb-6">
-        <h1 class="text-5xl font-black italic tracking-tighter uppercase mb-2">VENTAS 2020 TIENDA</h1>
-        <p class="text-gray-400 font-medium">Región Metropolitana de Santiago, Chile.</p>
-    </header>
+    <div class="hero-section">
+        <img src="https://images2.imgbox.com/3e/20/VvYf0K9u_o.png" alt="Logo" class="h-44 mx-auto mb-6">
+        <h1 class="text-5xl font-black italic uppercase tracking-tighter mb-2">VENTAS 2020 TIENDA</h1>
+        <p class="text-sm text-gray-400">Región Metropolitana de Santiago, Chile.</p>
+    </div>
 
-    <div class="flex justify-center px-4 sticky top-4 z-50">
-        <nav class="nav-container flex space-x-2 overflow-x-auto whitespace-nowrap shadow-2xl">
-            <a href="#" class="nav-link active">Novedades</a>
-            <a href="#" class="nav-link">Organizadores</a>
-            <a href="#" class="nav-link">Dama</a>
-            <a href="#" class="nav-link">Cuidado Personal</a>
-            <a href="#" class="nav-link">Cocina</a>
-            <a href="#" class="nav-link">Invierno</a>
-            <a href="#" class="nav-link">Toldos</a>
+    <div class="flex justify-center px-4 relative z-10">
+        <nav class="nav-bar flex space-x-1 overflow-x-auto no-scrollbar">
+            <button class="nav-item active">Novedades</button>
+            <button class="nav-item">Organizadores</button>
+            <button class="nav-item">Dama</button>
+            <button class="nav-item">Cuidado personal</button>
+            <button class="nav-item">Cocina</button>
+            <button class="nav-item">Invierno</button>
+            <button class="nav-item">Toldos</button>
         </nav>
     </div>
 
-    <main class="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-        
-        <div class="product-card group cursor-pointer" onclick="toggleModal(true)">
-            <div class="aspect-square relative overflow-hidden rounded-t-24">
-                <img src="https://images2.imgbox.com/f0/7f/P75pGZ8P_o.jpg" class="w-full h-full object-cover">
-                <span class="absolute top-4 left-4 bg-white text-black text-[10px] font-black px-3 py-1 rounded-full uppercase">Novedad</span>
+    <main class="max-w-7xl mx-auto px-6 py-20">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
+            
+            <div class="bg-[#111111] rounded-[32px] overflow-hidden border border-white/10 group cursor-pointer" onclick="openModal()">
+                <div class="aspect-square relative">
+                    <img src="https://images2.imgbox.com/f0/7f/P75pGZ8P_o.jpg" class="w-full h-full object-cover">
+                    <div class="absolute top-4 left-4 bg-white text-black text-[9px] font-black px-3 py-1 rounded-full uppercase">Novedad</div>
+                </div>
+                <div class="p-8 text-center">
+                    <p class="text-[10px] text-purple-500 font-black uppercase mb-1">Hogar</p>
+                    <h3 class="font-bold text-lg mb-2 uppercase">Organizador de Baño</h3>
+                    <p class="text-2xl font-black mb-6">$12.990</p>
+                    <button class="w-full bg-zinc-200 group-hover:bg-white text-black py-4 rounded-2xl font-bold text-[10px] uppercase transition">Ver Detalles</button>
+                </div>
             </div>
-            <div class="p-6 text-center">
-                <p class="text-purple-500 text-[10px] font-black uppercase mb-1">Hogar</p>
-                <h3 class="font-bold text-lg mb-1">ORGANIZADOR DE BAÑO</h3>
-                <p class="text-2xl font-black mb-6">$12.990</p>
-                <button class="w-full bg-zinc-800 group-hover:bg-white group-hover:text-black py-3 rounded-xl font-bold text-xs uppercase transition">Ver Detalles</button>
-            </div>
-        </div>
 
+        </div>
     </main>
 
-    <div id="productModal" class="modal" onclick="if(event.target == this) toggleModal(false)">
-        <div class="max-w-5xl w-full bg-[#0a0a0a] rounded-[40px] overflow-hidden flex flex-col md:flex-row relative border border-white/10">
-            <button onclick="toggleModal(false)" class="absolute top-6 right-8 text-white/50 hover:text-white text-4xl">&times;</button>
+    <div id="productModal" class="modal" onclick="if(event.target == this) closeModal()">
+        <div class="max-w-5xl w-full bg-[#0a0a0a] rounded-[40px] overflow-hidden relative flex flex-col md:flex-row border border-white/10">
+            <button onclick="closeModal()" class="absolute top-6 right-8 text-white/40 hover:text-white text-4xl">&times;</button>
             
-            <div class="md:w-1/2 p-8">
-                <img id="mainImg" src="https://images2.imgbox.com/f0/7f/P75pGZ8P_o.jpg" class="w-full aspect-square object-cover rounded-3xl mb-4">
+            <div class="md:w-1/2 p-8 bg-[#111111]">
+                <img id="mainView" src="https://images2.imgbox.com/f0/7f/P75pGZ8P_o.jpg" class="rounded-3xl w-full aspect-square object-cover mb-4">
                 <div class="grid grid-cols-4 gap-2">
-                    <img src="https://images2.imgbox.com/f0/7f/P75pGZ8P_o.jpg" class="rounded-xl cursor-pointer opacity-50 hover:opacity-100" onclick="document.getElementById('mainImg').src=this.src">
-                    <img src="https://images2.imgbox.com/56/67/V9pZNo2t_o.jpg" class="rounded-xl cursor-pointer opacity-50 hover:opacity-100" onclick="document.getElementById('mainImg').src=this.src">
-                    <img src="https://images2.imgbox.com/6c/20/xH7fOQxJ_o.jpg" class="rounded-xl cursor-pointer opacity-60 hover:opacity-100" onclick="document.getElementById('mainImg').src=this.src">
-                    <img src="https://images2.imgbox.com/f2/0a/6Gz789Ff_o.jpg" class="rounded-xl cursor-pointer opacity-60 hover:opacity-100" onclick="document.getElementById('mainImg').src=this.src">
+                    <img src="https://images2.imgbox.com/f0/7f/P75pGZ8P_o.jpg" class="rounded-xl cursor-pointer opacity-50 hover:opacity-100" onclick="document.getElementById('mainView').src=this.src">
+                    <img src="https://images2.imgbox.com/56/67/V9pZNo2t_o.jpg" class="rounded-xl cursor-pointer opacity-50 hover:opacity-100" onclick="document.getElementById('mainView').src=this.src">
+                    <img src="https://images2.imgbox.com/6c/20/xH7fOQxJ_o.jpg" class="rounded-xl cursor-pointer opacity-50 hover:opacity-100" onclick="document.getElementById('mainView').src=this.src">
+                    <img src="https://images2.imgbox.com/f2/0a/6Gz789Ff_o.jpg" class="rounded-xl cursor-pointer opacity-50 hover:opacity-100" onclick="document.getElementById('mainView').src=this.src">
                 </div>
             </div>
 
             <div class="md:w-1/2 p-10 flex flex-col justify-center">
                 <h2 class="text-3xl font-black mb-4 uppercase">Organizador de Baño</h2>
-                <p class="text-purple-400 font-bold mb-6 italic text-sm">Perfecto para mantener el orden de tus cosas personales.</p>
-                <ul class="text-gray-400 text-xs space-y-2 mb-8">
-                    <li>• Cómodo, fácil de armar y no ocupa espacio.</li>
-                    <li>• No necesita clavos ni taladro.</li>
+                <p class="text-purple-400 text-sm font-bold italic mb-6">Perfecto para mantener el orden de tus cosas personales.</p>
+                <ul class="text-gray-400 text-[11px] space-y-2 mb-8 leading-relaxed">
+                    <li>• Fácil de armar y desarmar, ahorra espacio.</li>
+                    <li>• No necesita clavos ni taladro en la pared.</li>
                     <li>• Material resistente al agua.</li>
                 </ul>
                 <div class="grid grid-cols-3 gap-2 border-y border-white/10 py-6 mb-8 text-center">
-                    <div><p class="text-[10px] text-gray-500 font-bold">ALTO</p><p class="text-lg font-black">160 cm</p></div>
-                    <div><p class="text-[10px] text-gray-500 font-bold">ANCHO</p><p class="text-lg font-black">47 cm</p></div>
-                    <div><p class="text-[10px] text-gray-500 font-bold">FONDO</p><p class="text-lg font-black">26 cm</p></div>
+                    <div><p class="text-[10px] text-gray-500 font-bold uppercase">Alto</p><p class="text-lg font-black">160 cm</p></div>
+                    <div><p class="text-[10px] text-gray-500 font-bold uppercase">Ancho</p><p class="text-lg font-black">47 cm</p></div>
+                    <div><p class="text-[10px] text-gray-500 font-bold uppercase">Fondo</p><p class="text-lg font-black">26 cm</p></div>
                 </div>
-                <a href="https://wa.me/569XXXXXXXX" class="w-full bg-[#25D366] text-white py-4 rounded-2xl text-center font-bold uppercase shadow-lg">Pedir por WhatsApp</a>
+                <a href="https://wa.me/569XXXXXXXX" class="w-full bg-[#25D366] text-white py-4 rounded-2xl font-bold text-center uppercase tracking-widest transition hover:scale-105">Comprar por WhatsApp</a>
             </div>
         </div>
     </div>
 
     <script>
-        function toggleModal(show) {
-            const modal = document.getElementById('productModal');
-            modal.classList.toggle('active', show);
-            document.body.style.overflow = show ? 'hidden' : 'auto';
-        }
+        function openModal() { document.getElementById('productModal').classList.add('active'); document.body.style.overflow = 'hidden'; }
+        function closeModal() { document.getElementById('productModal').classList.remove('active'); document.body.style.overflow = 'auto'; }
     </script>
 </body>
 </html>
