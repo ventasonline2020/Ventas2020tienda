@@ -5,85 +5,104 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VENTAS 2020 TIENDA</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
-        body { background-color: #0d0a16; color: white; font-family: sans-serif; }
-        .wave-bg {
-            background: linear-gradient(180deg, #0d0a16 0%, #1a0b2e 100%);
-            padding: 60px 20px; text-align: center;
+        body { font-family: 'Inter', sans-serif; background-color: #000000; color: white; margin: 0; }
+        .wave-background {
+            background-color: #0d0a16;
+            background-image: url("https://i.ibb.co/1000999472/background-wave.png"); /* Imagen de fondo ondulada */
+            background-size: cover; padding: 60px 20px; text-align: center;
         }
-        .nav-pill { background: #27272a; border-radius: 50px; padding: 10px 20px; display: inline-flex; gap: 15px; }
-        .modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 100; align-items: center; justify-content: center; padding: 20px; }
+        .nav-bar { background: rgba(30, 30, 30, 0.9); border-radius: 50px; padding: 10px 25px; margin-top: -25px; box-shadow: 0 4px 20px rgba(0,0,0,0.5); }
+        .nav-btn { font-size: 11px; font-weight: 700; color: #a1a1aa; text-transform: uppercase; padding: 8px 15px; border-radius: 20px; }
+        .nav-btn.active { background: #ffffff; color: #000000; }
+        .modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.95); z-index: 100; align-items: center; justify-content: center; padding: 20px; }
         .modal.active { display: flex; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
     </style>
 </head>
 <body>
 
-    <div class="wave-bg">
-        <img src="https://i.ibb.co/VpmWMv8V/1000999313.png" class="h-40 mx-auto mb-4">
-        <h1 class="text-4xl font-black italic">VENTAS 2020 TIENDA</h1>
-        <p class="text-gray-400">Región Metropolitana de Santiago, Chile.</p>
+    <div class="wave-background">
+        <img src="https://i.postimg.cc/9F7p949k/1000999313.png" alt="Logo Ventas2020" class="h-44 md:h-52 mx-auto mb-4">
+        <h1 class="text-4xl md:text-5xl font-black uppercase tracking-tighter mb-1">VENTAS 2020 TIENDA</h1>
+        <p class="text-sm text-gray-300 font-medium italic">Región Metropolitana de Santiago, Chile.</p>
     </div>
 
-    <div class="text-center -mt-6">
-        <div class="nav-pill">
-            <span class="text-xs font-bold uppercase bg-white text-black px-4 py-1 rounded-full">Novedades</span>
-            <span class="text-xs font-bold uppercase text-gray-400 py-1">Organizadores</span>
-        </div>
+    <div class="flex justify-center px-4 relative z-10">
+        <nav class="nav-bar flex space-x-1 overflow-x-auto no-scrollbar">
+            <button class="nav-btn active">Novedades</button>
+            <button class="nav-btn">Organizadores</button>
+            <button class="nav-btn">Dama</button>
+            <button class="nav-btn">Cuidado personal</button>
+            <button class="nav-btn">Cocina</button>
+            <button class="nav-btn">Invierno</button>
+            <button class="nav-btn">Toldos</button>
+        </nav>
     </div>
 
-    <main class="max-w-6xl mx-auto p-8 grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="bg-zinc-900 rounded-3xl overflow-hidden border border-white/10">
-            <img src="https://i.ibb.co/680327f/IMG-20260401-WA0020.jpg" 
-                 class="w-full aspect-square object-cover cursor-pointer" 
-                 onclick="openModal()">
-            <div class="p-6 text-center">
-                <p class="text-purple-400 text-[10px] font-bold uppercase">Hogar</p>
-                <h3 class="font-bold text-lg">ORGANIZADOR DE BAÑO</h3>
-                <p class="text-2xl font-black my-4">$12.990</p>
-                <button onclick="openModal()" class="w-full bg-zinc-300 text-black font-bold py-3 rounded-xl uppercase text-xs">Consultar Stock</button>
+    <main class="max-w-7xl mx-auto px-6 py-16">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+            
+            <div class="bg-[#111111] border border-white/10 rounded-[30px] overflow-hidden group">
+                <div class="aspect-square bg-[#1a1a1a] relative cursor-pointer" onclick="toggleModal(true)">
+                    <img src="https://i.postimg.cc/fTh4fXfB/IMG-20260401-WA0020.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute top-4 left-4 bg-white text-black text-[9px] font-black px-3 py-1 rounded-full uppercase">Novedad</div>
+                </div>
+                <div class="p-6 text-center">
+                    <p class="text-[9px] text-purple-500 font-black uppercase tracking-widest mb-1">Hogar</p>
+                    <h3 class="font-bold text-white text-base mb-1 uppercase">Organizador de Baño</h3>
+                    <p class="text-xl font-black text-white mb-5">$12.990</p>
+                    <button onclick="toggleModal(true)" class="w-full bg-zinc-200 hover:bg-white text-black py-3 rounded-2xl font-bold text-[10px] uppercase transition">Ver Detalles</button>
+                </div>
             </div>
+
         </div>
     </main>
 
-    <div id="descModal" class="modal">
-        <div class="bg-zinc-900 max-w-4xl w-full rounded-3xl overflow-hidden relative flex flex-col md:flex-row">
-            <button onclick="closeModal()" class="absolute top-4 right-6 text-3xl">&times;</button>
+    <div id="prodModal" class="modal" onclick="if(event.target == this) toggleModal(false)">
+        <div class="max-w-5xl w-full bg-[#0a0a0a] rounded-[40px] overflow-hidden relative flex flex-col md:flex-row border border-white/10">
+            <button onclick="toggleModal(false)" class="absolute top-6 right-8 text-white/40 hover:text-white text-4xl">&times;</button>
             
-            <div class="md:w-1/2 p-6">
-                <img id="viewImg" src="https://i.ibb.co/680327f/IMG-20260401-WA0020.jpg" class="w-full rounded-2xl mb-4">
+            <div class="md:w-1/2 p-8 bg-[#111111]">
+                <img id="mainView" src="https://i.postimg.cc/fTh4fXfB/IMG-20260401-WA0020.jpg" class="rounded-3xl w-full aspect-square object-cover mb-4 border border-white/5">
                 <div class="grid grid-cols-4 gap-2">
-                    <img src="https://i.ibb.co/680327f/IMG-20260401-WA0020.jpg" class="rounded-lg cursor-pointer" onclick="changeImg(this.src)">
-                    <img src="https://i.ibb.co/L8yFfX8/1000982580.jpg" class="rounded-lg cursor-pointer" onclick="changeImg(this.src)">
-                    <img src="https://i.ibb.co/7bJ3p1X/1000982585.jpg" class="rounded-lg cursor-pointer" onclick="changeImg(this.src)">
-                    <img src="https://i.ibb.co/51P8t8k/1000982583.jpg" class="rounded-lg cursor-pointer" onclick="changeImg(this.src)">
+                    <img src="https://i.postimg.cc/fTh4fXfB/IMG-20260401-WA0020.jpg" class="rounded-xl cursor-pointer opacity-60 hover:opacity-100" onclick="document.getElementById('mainView').src=this.src">
+                    <img src="https://i.postimg.cc/906mQp8D/1000982580.jpg" class="rounded-xl cursor-pointer opacity-60 hover:opacity-100" onclick="document.getElementById('mainView').src=this.src">
+                    <img src="https://i.postimg.cc/zXvXp1Xz/1000982585.jpg" class="rounded-xl cursor-pointer opacity-60 hover:opacity-100" onclick="document.getElementById('mainView').src=this.src">
+                    <img src="https://i.postimg.cc/7Z9yZ2pL/1000982583.jpg" class="rounded-xl cursor-pointer opacity-60 hover:opacity-100" onclick="document.getElementById('mainView').src=this.src">
                 </div>
             </div>
 
-            <div class="md:w-1/2 p-8 flex flex-col justify-center">
-                <h2 class="text-2xl font-black mb-2">ORGANIZADOR DE BAÑO</h2>
-                <p class="text-purple-400 text-sm mb-4">Producto perfecto para mantener el orden en tu baño con tus cosas personales.</p>
-                <ul class="text-gray-300 text-xs space-y-2 mb-6">
-                    <li>• Excelentes muebles de baño para mantener ordenado tus cosas personales.</li>
-                    <li>• Cómodo, fácil de Armar y desarmar y no ocupa espacio.</li>
-                    <li>• Apto para colocar gran variedad de tus artículos personales.</li>
-                    <li>• No necesita: clavos, taladro ni trabajos en la pared.</li>
-                    <li>• Resistentes al agua.</li>
+            <div class="md:w-1/2 p-10 flex flex-col justify-center">
+                <h2 class="text-3xl font-black mb-3 uppercase tracking-tighter">Organizador de Baño</h2>
+                <p class="text-purple-400 text-sm font-bold mb-6 italic">Perfecto para mantener el orden de tus cosas personales.</p>
+                
+                <ul class="text-gray-400 text-[12px] space-y-2 mb-8 leading-relaxed">
+                    <li>• Fácil de armar y desarmar, no ocupa espacio extra.</li>
+                    <li>• No necesita clavos ni taladros en la pared.</li>
+                    <li>• Material resistente al agua y duradero.</li>
                 </ul>
-                <div class="bg-white/5 p-4 rounded-xl mb-6 grid grid-cols-3 text-center text-[10px]">
-                    <div><p class="text-gray-500">ALTO</p><p class="font-bold text-base">160 cm</p></div>
-                    <div><p class="text-gray-500">ANCHO</p><p class="font-bold text-base">47 cm</p></div>
-                    <div><p class="text-gray-500">PROF.</p><p class="font-bold text-base">26 cm</p></div>
+
+                <div class="grid grid-cols-3 gap-4 border-y border-white/10 py-6 mb-8 text-center">
+                    <div><span class="block text-[10px] text-gray-500 font-bold uppercase">Alto</span><span class="text-lg font-black">160 cm</span></div>
+                    <div><span class="block text-[10px] text-gray-500 font-bold uppercase">Ancho</span><span class="text-lg font-black">47 cm</span></div>
+                    <div><span class="block text-[10px] text-gray-500 font-bold uppercase">Fondo</span><span class="text-lg font-black">26 cm</span></div>
                 </div>
-                <a href="https://wa.me/569XXXXXXXX" class="bg-green-500 text-white text-center py-4 rounded-xl font-bold uppercase">Pedir por WhatsApp</a>
+
+                <a href="https://wa.me/569XXXXXXXX" class="w-full bg-[#25D366] text-white py-4 rounded-2xl flex items-center justify-center space-x-3 font-bold uppercase tracking-widest shadow-lg hover:bg-[#1fb355] transition">
+                    <span>Comprar por WhatsApp</span>
+                </a>
             </div>
         </div>
     </div>
 
     <script>
-        function openModal() { document.getElementById('descModal').classList.add('active'); }
-        function closeModal() { document.getElementById('descModal').classList.remove('active'); }
-        function changeImg(src) { document.getElementById('viewImg').src = src; }
+        function toggleModal(show) {
+            const m = document.getElementById('prodModal');
+            m.classList.toggle('active', show);
+            document.body.style.overflow = show ? 'hidden' : 'auto';
+        }
     </script>
-
 </body>
 </html>
