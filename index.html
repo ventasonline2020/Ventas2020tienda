@@ -22,42 +22,29 @@
             adjunto de fondo: fijo;
         }
 
-        .category-tab:hover {
-            color: blanco;
-            color de fondo: #9333ea;
-        }
-        .category-tab.active {
-            color: blanco;
-            color de fondo: #9333ea;
-        }
+        .category-tab:hover { color: white; background-color: #9333ea; }
+        .category-tab.active { color: white; background-color: #9333ea; }
         
-        .no-scrollbar::-webkit- scrollbar {
-            mostrar: ninguno;
-        }
-        .no-scrollbar {
-            -ms-overflow-style: ninguno;
-            ancho de la barra de desplazamiento: ninguno;
-        }
+        .no-scrollbar::-webkit- scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
 </head>
 <body class="text-blanco-cómodo-fondo">
 
     <header class="border-b border-gray-800 bg-black sticky top-0 z-50 py-8">
         <div class="max-w-7xl mx-auto px-4 flex flex-col items-center text-center">
-            
             <div class="mb-4">
 <a href=" https:// ventasonline2020.github.io/ Ventas2020tienda/ ">               
-                    <img src=" https://i.ibb.co/ pryv43p2/1000999313-copia.png " alt="Logo Ventas 2020" class="h-32 md:h-40 object-contain border-0">
+                    <img src=" https://i.ibb.co/ pryv43p2/1000999313-copia.png " alt="Logo Ventas 2020" class="h-32 md:h-40 object-contain">
                 </a>
             </div>
-            
             <h1 class="text-3xl md:text-5xl font-black text-white uppercase tracking-[0.2em] mb-2">VENTAS 2020 TIENDA</h1>
             <p class="text-sm md:text-lg text-gray-400 font-medium tracking-wide">Región Metropolitana de Santiago, Chile.</p>
         </div>
     </header>
 
     <main class="max-w-7xl mx-auto px-4 py-8">
-        <div class="mb-10 flex justify-center border-b border-gray-800 bg-black/90 backdrop-blur-md sticky top-[220px] md:top-[260px] z-40 rounded-full">
+        <div class="mb-10 flex justify-center border-b border-gray-800 bg-black/90 backdrop-blur-md sticky top-[230px] md:top-[280px] z-40 rounded-full">
             <div class="flex space-x-1 p-2 overflow-x-auto text-xs font-bold uppercase tracking-widest no-scrollbar">
                 <button class="category-tab px-6 py-3 rounded-full text-white active">Novedades</button>
                 <button class="category-tab px-6 py-3 rounded-full text-gray-400">Organizadores </button>
