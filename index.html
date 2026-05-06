@@ -5,92 +5,102 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VENTAS 2020 TIENDA</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Inter', sans-serif;
             margin: 0;
             background-color: #000000;
+            color: white;
+            overflow-x: hidden;
         }
 
-        /* Fondo sofisticado de ondas blanco y morado */
-        .sophisticated-bg {
-            background-image: 
-                linear-gradient(135deg, rgba(147, 51, 234, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%),
-                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1000' height='600' viewBox='0 0 1000 600'%3E%3Cpath d='M0,160 C150,250 350,100 500,160 C650,220 850,100 1000,160 L1000,600 L0,600 Z' fill='%239333ea' fill-opacity='0.1'/%3E%3Cpath d='M0,360 C150,450 350,300 500,360 C650,420 850,300 1000,360 L1000,600 L0,600 Z' fill='%23ffffff' fill-opacity='0.05'/%3E%3C/svg%3E");
+        /* Fondo de ondas fluido como en la imagen */
+        .wave-background {
+            position: relative;
+            background-color: #000000;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cpath fill='%231a0b2e' d='M0,320L48,314.7C96,309,192,299,288,272C384,245,480,203,576,202.7C672,203,768,245,864,250.7C960,256,1056,224,1152,197.3C1248,171,1344,149,1392,138.7L1440,128L1440,800L1392,800C1344,800,1248,800,1152,800C1056,800,960,800,864,800C768,800,672,800,576,800C480,800,384,800,288,800C192,800,96,800,48,800L0,800Z'/%3E%3Cpath fill='%232d1254' opacity='0.5' d='M0,480L48,469.3C96,459,192,437,288,442.7C384,448,480,480,576,480C672,480,768,448,864,426.7C960,405,1056,395,1152,389.3C1248,384,1344,384,1392,384L1440,384L1440,800L1392,800C1344,800,1248,800,1152,800C1056,800,960,800,864,800C768,800,672,800,576,800C480,800,384,800,288,800C192,800,96,800,48,800L0,800Z'/%3E%3Cg stroke='%23ffffff' stroke-width='0.5' opacity='0.1'%3E%3Cpath d='M0,300 Q400,100 800,300 T1600,300' fill='none'/%3E%3Cpath d='M0,350 Q400,150 800,350 T1600,350' fill='none'/%3E%3Cpath d='M0,400 Q400,200 800,400 T1600,400' fill='none'/%3E%3Cpath d='M0,450 Q400,250 800,450 T1600,450' fill='none'/%3E%3C/g%3E%3C/svg%3E");
             background-size: cover;
             background-position: center;
-            background-attachment: fixed;
+            min-height: 500px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 20px;
         }
 
-        .category-tab:hover {
-            color: white;
-            background-color: #9333ea;
+        .logo-shadow {
+            filter: drop-shadow(0 0 25px rgba(147, 51, 234, 0.4));
         }
-        .category-tab.active {
-            color: white;
-            background-color: #9333ea;
+
+        .category-nav {
+            background: rgba(30, 30, 30, 0.8);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
-        
-        .no-scrollbar::-webkit-scrollbar {
-            display: none;
+
+        .tab-active {
+            background-color: #5b328a;
+            color: white !important;
         }
-        .no-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
+
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
 </head>
-<body class="text-white sophisticated-bg">
+<body>
 
-    <header class="border-b border-gray-800 bg-black sticky top-0 z-50 py-8">
-        <div class="max-w-7xl mx-auto px-4 flex flex-col items-center text-center">
-            
-            <div class="mb-4">
-                <img src="https://i.ibb.co/VpmWMv8V/1000999313.png" alt="Logo Ventas 2020" class="h-32 md:h-40 object-contain">
+    <div class="wave-background">
+        <img src="https://i.ibb.co/VpmWMv8V/1000999313.png" alt="Logo" class="h-40 md:h-56 object-contain logo-shadow mb-6">
+        
+        <h1 class="text-4xl md:text-7xl font-black text-white uppercase tracking-tight mb-4">
+            VENTAS 2020 TIENDA
+        </h1>
+        
+        <p class="text-lg md:text-2xl text-gray-200 font-light tracking-wide">
+            Región Metropolitana de Santiago, Chile.
+        </p>
+    </div>
+
+    <nav class="category-nav sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex space-x-1 py-3 overflow-x-auto no-scrollbar justify-center md:justify-start">
+                <button class="px-6 py-2 rounded-full text-sm font-bold uppercase tab-active">Novedades</button>
+                <button class="px-6 py-2 rounded-full text-sm font-bold uppercase text-gray-400 hover:text-white">Organizadores</button>
+                <button class="px-6 py-2 rounded-full text-sm font-bold uppercase text-gray-400 hover:text-white">Dama</button>
+                <button class="px-6 py-2 rounded-full text-sm font-bold uppercase text-gray-400 hover:text-white">Cuidado personal</button>
+                <button class="px-6 py-2 rounded-full text-sm font-bold uppercase text-gray-400 hover:text-white">Cocina</button>
+                <button class="px-6 py-2 rounded-full text-sm font-bold uppercase text-gray-400 hover:text-white">Invierno</button>
+                <button class="px-6 py-2 rounded-full text-sm font-bold uppercase text-gray-400 hover:text-white">Toldos</button>
             </div>
-            
-            <h1 class="text-3xl md:text-5xl font-black text-white uppercase tracking-[0.2em] mb-2">VENTAS 2020 TIENDA</h1>
-            
-            <p class="text-sm md:text-lg text-gray-400 font-medium tracking-wide">Región Metropolitana de Santiago, Chile.</p>
         </div>
-    </header>
+    </nav>
 
-    <main class="max-w-7xl mx-auto px-4 py-8">
-        <div class="mb-10 flex justify-center border-b border-gray-800 bg-black/90 backdrop-blur-md sticky top-[220px] md:top-[260px] z-40 rounded-full">
-            <div class="flex space-x-1 p-2 overflow-x-auto text-xs font-bold uppercase tracking-widest no-scrollbar">
-                <button class="category-tab px-6 py-3 rounded-full text-white active">Novedades</button>
-                <button class="category-tab px-6 py-3 rounded-full text-gray-400">Organizadores</button>
-                <button class="category-tab px-6 py-3 rounded-full text-gray-400">Dama</button>
-                <button class="category-tab px-6 py-3 rounded-full text-gray-400">Cuidado personal</button>
-                <button class="category-tab px-6 py-3 rounded-full text-gray-400">Cocina</button>
-                <button class="category-tab px-6 py-3 rounded-full text-gray-400">Invierno</button>
-                <button class="category-tab px-6 py-3 rounded-full text-gray-400">Toldos</button>
-            </div>
-        </div>
-
+    <main class="max-w-7xl mx-auto px-4 py-12">
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
             
-            <div class="group bg-neutral-950 border border-gray-800 rounded-2xl p-5 flex flex-col items-center hover:border-purple-500 transition-all duration-300">
-                <div class="relative aspect-square overflow-hidden bg-neutral-900 mb-5 rounded-xl w-full">
-                    <img src="https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?q=80&w=1000" alt="Producto" class="object-cover w-full h-full group-hover:scale-110 transition duration-500">
-                    <span class="absolute top-3 left-3 bg-purple-600 text-white px-3 py-1 text-[10px] font-black uppercase rounded-lg shadow-lg">Novedad</span>
+            <div class="bg-zinc-900 border border-white/5 rounded-2xl overflow-hidden hover:border-purple-500/50 transition-all group">
+                <div class="aspect-square bg-zinc-800 relative overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?q=80&w=1000" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute top-3 left-3 bg-white text-black text-[10px] font-black px-3 py-1 rounded-full uppercase">Novedad</div>
                 </div>
-                <h3 class="text-[10px] font-bold text-purple-400 uppercase tracking-[0.2em] mb-2">Hogar</h3>
-                <p class="font-extrabold text-base text-white mb-2 text-center">Organizador Premium</p>
-                <p class="text-2xl font-black text-white mb-5">$15.990</p>
-                
-                <a href="https://wa.me/569XXXXXXXX?text=Hola,%20me%20interesa%20este%20producto." target="_blank" class="w-full flex items-center justify-center space-x-3 bg-purple-600 hover:bg-purple-700 text-white font-black text-xs uppercase py-4 rounded-xl transition-all shadow-lg active:scale-95">
-                    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" class="h-4 w-4 invert">
-                    <span>Consultar Stock</span>
-                </a>
+                <div class="p-6 flex flex-col items-center">
+                    <span class="text-[10px] text-purple-400 font-bold uppercase tracking-widest mb-2">Hogar</span>
+                    <h3 class="font-bold text-white mb-2">Organizador Premium</h3>
+                    <p class="text-2xl font-black text-white mb-6">$15.990</p>
+                    <a href="https://wa.me/569XXXXXXXX" class="w-full bg-purple-600 hover:bg-purple-700 py-3 rounded-xl flex items-center justify-center space-x-2 font-bold text-xs uppercase transition">
+                        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" class="h-4 w-4 invert">
+                        <span>Pedir por WhatsApp</span>
+                    </a>
+                </div>
             </div>
 
         </div>
     </main>
 
-    <a href="https://wa.me/569XXXXXXXX" target="_blank" class="fixed bottom-8 right-8 z-50 bg-green-500 hover:bg-green-600 p-5 rounded-full shadow-[0_0_20px_rgba(34,197,94,0.5)] transition duration-300 hover:scale-110 active:scale-90">
-        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" class="h-8 w-8 invert">
+    <a href="https://wa.me/569XXXXXXXX" class="fixed bottom-8 right-8 bg-[#25D366] p-4 rounded-full shadow-2xl hover:scale-110 transition z-50">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" class="h-8 w-8 invert">
     </a>
 
 </body>
